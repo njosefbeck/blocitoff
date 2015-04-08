@@ -17,6 +17,14 @@ app.factory('toDoTasks', ['$firebaseArray', 'FIREBASE_URI', function ($firebaseA
 
     var addTask = function(task) {
       tasks.$add(task);
+      
+      var sortByPriority = function() {
+        tasks.orderByValue().on("value", function(snapshot) {
+          snapshot.forEach(function(data) {
+            return data.val();
+          })
+        });
+      }
     };
 
     //var updateTask = function(id) {

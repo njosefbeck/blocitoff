@@ -16,6 +16,7 @@ app.controller('MainCtrl', ['$scope', 'toDoTasks', function($scope, toDoTasks) {
 
   $scope.addTask = function() {
     toDoTasks.addTask(angular.copy($scope.newTask));
+    sortByPriority();
     $scope.newTask = { desc: '', priority: '', status: 'active' };
   };
 
