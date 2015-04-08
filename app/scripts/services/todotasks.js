@@ -9,5 +9,6 @@
  */
 app.factory('toDoTasks', ['$firebaseArray', 'FIREBASE_URI', function ($firebaseArray, FIREBASE_URI) {
     var ref = new Firebase(FIREBASE_URI);
-    var tasks = $firebaseArray(ref);
+    
+    return $firebaseArray(ref);
 }]);

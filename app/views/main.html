@@ -4,12 +4,14 @@
   
   <form ng-submit="addTask()" class="form-inline">
     <div class="form-group">
-      <input type="text" class="form-control" ng-model="">
+      <input type="text" class="form-control" ng-model="task.desc" placeholder="Task Description">
+      <input type="text" class="form-control" ng-model="task.priority" placeholder="Priority Level">
+      <input type="text" class="form-control" ng-model="task.status" placeholder="Status">
     </div>
     <button type="submit" class="btn btn-default">Add</button>
   </form>
 
   <ul>
-    <li ng-repeat=""></li>
+    <li ng-repeat="(id, task) in tasks"></li>
   </ul>
 </div>
