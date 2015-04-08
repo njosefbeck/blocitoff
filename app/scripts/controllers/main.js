@@ -9,31 +9,21 @@
  */
 app.controller('MainCtrl', ['$scope', 'toDoTasks', function($scope, toDoTasks) {
 
-    // Add toDoTasks array to the scope to be used in our ng-repeat
-    $scope.tasks = toDoTasks; 
+  $scope.newTask = { desc: '', priority: '', status: '' };
+  $scope.currentTask = null;
 
-    // Method to create new tasks; called by ng-submit
-    $scope.addTask = function() {
-      $scope.tasks.$add({
-        desc: $scope.desc,
-        priority: $scope.priority,
-        status: $scope.status
-      });
+  $scope.tasks = toDoTasks.getTasks();
 
-      // Reset task inputs
-      $scope.desc = '';
-      $scope.priority = '';
-      $scope.status = '';
-      };
+  $scope.addTask = function() {
+    toDoTasks.addTask(angular.copy($scope.newTask));
+    $scope.newTask = { desc: '', priority: '', status: '' };
+  };
 
-    // If tasks are tempty, add a default
-    $scope.tasks.$loaded(function() {
-      if ($scope.tasks.length === 0) {
-        $scope.tasks.$add({
-          desc: 'Get a new puppy!',
-          priority: 'med',
-          status: 'active'
-        });
-      }
-    });
+  $scope.updateTask = function(id) {
+    toDoTasks.updateTask(id);
+  };
+
+  $scope.removeTask = function(id) {
+    toDoTasks.removeTask(id);
+  };
 }]);
