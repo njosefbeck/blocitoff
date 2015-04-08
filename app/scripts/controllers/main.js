@@ -18,7 +18,7 @@ angular.module('blocitoffApp')
       // Method to create new tasks; called by ng-submit
       $scope.addTask = function() {
         $scope.tasks.$add({
-          task: $scope.task 
+          content: $scope.task 
         });
 
         // Reset the task input
@@ -29,7 +29,7 @@ angular.module('blocitoffApp')
       $scope.tasks.$loaded(function() {
         if ($scope.tasks.length === 0) {
           $scope.tasks.$add({
-            task: "Paint a picture!"
+            content: "Paint a picture!"
           });
         };
       });
