@@ -34,3 +34,5 @@ var app = angular
         redirectTo: '/'
       });
   });
+
+  app.constant('FIREBASE_URI', 'https://popping-inferno-5377.firebaseio.com/');
