@@ -8,7 +8,7 @@
  * Controller of the blocitoffApp
  */
 angular.module('blocitoffApp')
-  .controller('MainCtrl', ["$scope", "toDoTasks",
+  .controller('MainCtrl', ['$scope', 'toDoTasks',
     // Pass new toDoTasks factory into the controller
     function($scope, toDoTasks) {
 
@@ -22,16 +22,16 @@ angular.module('blocitoffApp')
         });
 
         // Reset the task input
-        $scope.task = "";
+        $scope.task = '';
       };
 
       // If tasks are empty, add a default
       $scope.tasks.$loaded(function() {
         if ($scope.tasks.length === 0) {
           $scope.tasks.$add({
-            content: "Paint a picture!"
+            content: 'Paint a picture!'
           });
-        };
+        }
       });
     }
   ]);
