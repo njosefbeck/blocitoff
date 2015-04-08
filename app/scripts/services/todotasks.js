@@ -7,6 +7,6 @@
  * # toDoTasks
  * Factory in the blocitoffApp.
  */
-app.factory('toDoTasks', ['$firebaseArray', function ($firebaseArray) {
+app.factory('toDoTasks', ['$firebaseArray', 'FIREBASE_URI', function ($firebaseArray, FIREBASE_URI) {
 
 }]);
