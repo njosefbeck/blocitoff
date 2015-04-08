@@ -8,7 +8,7 @@
  * Controller of the blocitoffApp
  */
 angular.module('blocitoffApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('MainCtrl', function ($scope, "toDoTasks") {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
