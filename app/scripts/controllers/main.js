@@ -9,9 +9,32 @@
  */
 angular.module('blocitoffApp')
   .controller('MainCtrl', function ($scope, "toDoTasks") {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    // Pass new toDoTasks factory into the controller
+    function($scope, toDoTasks) {
+
+      // Add toDoTasks array to the scope to be used in our ng-repeat
+      $scope.tasks = toDoTasks;
+
+      // Method to create new tasks; called by ng-submit
+      $scope.addTask = function() {
+        $scope.tasks.$add({
+          task: $scope.task 
+        });
+
+        // Reset the task input
+        $scope.task = "";
+      };
+
+      // If tasks are empty, add a default
+      $scope.tasks.$loaded(function() {
+        if ($scope.tasks.length === 0) {
+          $scope.tasks.$add({
+            task: "Paint a picture!"
+          });
+        };
+      });
+
+
+
+    }
   });
