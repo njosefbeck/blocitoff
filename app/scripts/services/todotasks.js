@@ -7,9 +7,6 @@
  * # toDoTasks
  * Factory in the blocitoffApp.
  */
-angular.module('blocitoffApp')
-  .factory('toDoTasks', ['$firebaseArray', function ($firebaseArray) {
-      
+app.factory('toDoTasks', ['$firebaseArray', function ($firebaseArray) {
 
-    }
-  ]);
+}]);
