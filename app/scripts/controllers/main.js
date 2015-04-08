@@ -19,11 +19,12 @@ app.controller('MainCtrl', ['$scope', 'toDoTasks', function($scope, toDoTasks) {
     $scope.newTask = { desc: '', priority: '', status: '' };
   };
 
-  $scope.updateTask = function(id) {
-    toDoTasks.updateTask(id);
-  };
 
-  $scope.removeTask = function(id) {
-    toDoTasks.removeTask(id);
-  };
+  //$scope.updateTask = function(id) {
+  // toDoTasks.updateTask(id);
+  //};
+
+  //$scope.removeTask = function(id) {
+  // toDoTasks.removeTask(id);
+  //};
 }]);
