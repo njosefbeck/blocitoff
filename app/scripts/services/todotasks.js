@@ -16,6 +16,10 @@ angular.module('blocitoffApp')
         var completeIndexRef = fbRef.child('users/nathan/complete');
         var expiredIndexRef = fbRef.child('users/nathan/expired');
 
-        
+        // return each ref as a synchronized object
+        return $firebaseObject(tasksRef);
+        return $firebaseObject(activeIndexRef);
+        return $firebaseObject(completeIndexRef);
+        return $firebaseObject(expiredIndexRef);
       }
   ]);
