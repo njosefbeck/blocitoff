@@ -16,7 +16,7 @@ app.factory('toDoTasks', ['$firebaseArray', 'FIREBASE_URI', function ($firebaseA
     };
 
     var orderByPriority = function() {
-      
+      // Write more complex sort function here
     }
 
     var addTask = function(task) {
