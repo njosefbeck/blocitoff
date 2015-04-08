@@ -12,17 +12,9 @@ angular.module('blocitoffApp')
     // Pass new toDoTasks factory into the controller
     function($scope, toDoTasks) {
 
-      // Add toDoTasks array to the scope to be used in our ng-repeat
-      $scope.tasks = toDoTasks;
-
-      // Method to create new tasks; called by ng-submit
-      $scope.addTask = function() {
-        $scope.tasks.$add({
-          content: $scope.task 
-        });
-
-        // Reset the task input
-        $scope.task = '';
+        // put active tasks in the scope for use in DOM
+        $scope.activeTasks = $firebaseObject(activeIndexRef);
+      
       };
     }
   ]);
