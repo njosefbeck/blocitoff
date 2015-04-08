@@ -12,8 +12,11 @@ angular.module('blocitoffApp')
     // Pass new toDoTasks factory into the controller
     function($scope, toDoTasks) {
 
-        // put active tasks in the scope for use in DOM
-        $scope.active = $firebaseObject(activeIndexRef);
+        // download active tasks into a local object
+        var syncActiveObject = $firebaseObject(activeIndexRef);
+
+        // synch object with a three-way data binding
+        syncActiveObject.$bindTo($scope, "active");
       
       };
     }
