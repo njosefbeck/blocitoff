@@ -8,7 +8,7 @@
  * Controller of the blocitoffApp
  */
 angular.module('blocitoffApp')
-  .controller('MainCtrl', function ($scope, "toDoTasks") {
+  .controller('MainCtrl', ["$scope", "toDoTasks", function($scope, "toDoTasks") {
     // Pass new toDoTasks factory into the controller
     function($scope, toDoTasks) {
 
@@ -33,8 +33,5 @@ angular.module('blocitoffApp')
           });
         };
       });
-
-
-
     }
-  });
+  }]);
