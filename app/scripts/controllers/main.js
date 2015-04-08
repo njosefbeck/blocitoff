@@ -24,14 +24,5 @@ angular.module('blocitoffApp')
         // Reset the task input
         $scope.task = '';
       };
-
-      // If tasks are empty, add a default
-      $scope.tasks.$loaded(function() {
-        if ($scope.tasks.length === 0) {
-          $scope.tasks.$add({
-            content: 'Paint a picture!'
-          });
-        }
-      });
     }
   ]);
