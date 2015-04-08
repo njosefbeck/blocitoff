@@ -32,6 +32,6 @@ app.factory('toDoTasks', ['$firebaseArray', 'FIREBASE_URI', function ($firebaseA
       addTask: addTask
       //updateTask: updateTask,
       //removeTask: removeTask
-    }
+    };
 
 }]);
