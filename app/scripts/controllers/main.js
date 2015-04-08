@@ -13,7 +13,7 @@ angular.module('blocitoffApp')
     function($scope, toDoTasks) {
 
         // put active tasks in the scope for use in DOM
-        $scope.activeTasks = $firebaseObject(activeIndexRef);
+        $scope.active = $firebaseObject(activeIndexRef);
       
       };
     }
