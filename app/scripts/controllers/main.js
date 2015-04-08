@@ -9,14 +9,14 @@
  */
 app.controller('MainCtrl', ['$scope', 'toDoTasks', function($scope, toDoTasks) {
 
-  $scope.newTask = { desc: '', priority: '', status: '' };
+  $scope.newTask = { desc: '', priority: '', status: 'active' };
   $scope.currentTask = null;
 
   $scope.tasks = toDoTasks.getTasks();
 
   $scope.addTask = function() {
     toDoTasks.addTask(angular.copy($scope.newTask));
-    $scope.newTask = { desc: '', priority: '', status: '' };
+    $scope.newTask = { desc: '', priority: '', status: 'active' };
   };
 
 
