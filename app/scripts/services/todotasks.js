@@ -8,16 +8,12 @@
  * Factory in the blocitoffApp.
  */
 angular.module('blocitoffApp')
-  .factory('toDoTasks', function () {
-    // Service logic
-    // ...
+  .factory('toDoTasks', ["$firebaseArray", function ($firebaseArray) {
+        // This creates a reference to the Firebase where we will store our task list data
+        var ref = new Firebase("https://popping-inferno-5377.firebaseio.com/")
 
-    var meaningOfLife = 42;
-
-    // Public API here
-    return {
-      someMethod: function () {
-        return meaningOfLife;
+        // This uses AngularFire to create the synchronized array
+        return $firebaseArray(ref);
       }
     };
   });
