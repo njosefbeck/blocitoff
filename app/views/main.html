@@ -13,6 +13,6 @@
   </form>
 
   <ul>
-    <li ng-repeat="(id, task) in tasks"> {{ task.desc }} {{ task.priority }} {{ task.status }}</li>
+    <li ng-repeat="(id, task) in tasks by id.priority"> {{ task.desc }} {{ task.priority }} {{ task.status }}</li>
   </ul>
 </div>
