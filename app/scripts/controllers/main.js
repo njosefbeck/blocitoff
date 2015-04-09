@@ -20,7 +20,7 @@ app.controller('MainCtrl', ['$scope', 'toDoTasks', function($scope, toDoTasks) {
   };
 
   $scope.changeState = function(id) {
-    $scope.task = $scope.tasks[4];
+    $scope.task = $scope.tasks[3];
     $scope.task.status = 'complete';
     toDoTasks.changeState(id);
   };
