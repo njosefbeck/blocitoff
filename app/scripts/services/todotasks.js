@@ -25,9 +25,9 @@ app.factory('toDoTasks', ['$firebaseArray', 'FIREBASE_URI', function ($firebaseA
 
     var changeState = function(id) {
       console.log("I was clicked!");
-      var task = tasks.$getRecord(id);
+      var task = $scope.tasks.$getRecord(id);
       task.status = "complete";
-      tasks.$save(task).then(function() {
+      $scope.tasks.$save(task).then(function() {
         console.log(tasks);
       });
     }
