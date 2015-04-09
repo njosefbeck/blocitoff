@@ -23,6 +23,14 @@ app.factory('toDoTasks', ['$firebaseArray', 'FIREBASE_URI', function ($firebaseA
       tasks.$add(task);
     };
 
+    var changeState = function() {
+      var task = tasks.$getRecord(someRecordKey);
+      task.status = "complete";
+      tasks.$save(task).then(function() {
+        // new task status has been saved to Firebase
+      });
+    }
+
     //var updateTask = function(id) {
     //  tasks.$save(id);
     //};
