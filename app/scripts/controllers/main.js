@@ -7,34 +7,24 @@
  * # MainCtrl
  * Controller of the blocitoffApp
  */
-app.controller('MainCtrl', ['$scope', '$firebaseArray', 'FIREBASE_URI', function($scope, $firebaseArray, FIREBASE_URI) {
+app.controller('MainCtrl', ['$scope', 'toDoTasks', function($scope, toDoTasks) {
 
-  var ref = new Firebase(FIREBASE_URI);
+  $scope.newTask = { desc: '', priority: '', status: 'active' };
+  $scope.currentTask = null;
 
-  $scope.tasks = $firebaseArray(ref);
-
-  $scope.newTask = '';
-
-  //$scope.newTask = { desc: '', priority: '', status: 'active' };
-  //$scope.currentTask = null;
+  $scope.tasks = toDoTasks.getTasks();
 
   $scope.addTask = function() {
-    var newTask = $scope.newTask.trim();
-    
-    $scope.tasks.$add({
-      title: newTask.title,
-      priority: newTask.priority,
-      completed: false
-    });
-    $scope.newTask = '';
+    toDoTasks.addTask(angular.copy($scope.newTask));
+    $scope.newTask = { desc: '', priority: '', status: 'active' };
   };
-/*
-  $scope.changeState = function($index) {
-    $scope.task = $scope.tasks[$index];
+
+  $scope.changeState = function(id) {
+    $scope.task = $scope.tasks[3];
     $scope.task.status = 'complete';
-    toDoTasks.changeState($index);
+    toDoTasks.changeState(id);
   };
-*/
+
   //$scope.updateTask = function(id) {
   // toDoTasks.updateTask(id);
   //};

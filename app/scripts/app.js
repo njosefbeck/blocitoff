@@ -35,4 +35,4 @@ var app = angular
       });
   });
 
-  app.constant('FIREBASE_URI', 'https://popping-inferno-5377.firebaseio.com/tasks');
+  app.constant('FIREBASE_URI', 'https://popping-inferno-5377.firebaseio.com/');

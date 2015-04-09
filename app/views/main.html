@@ -4,7 +4,7 @@
   
   <form ng-submit="addTask()" class="form-inline">
     <div class="form-group">
-      <input type="text" class="form-control" ng-model="newTask.title" placeholder="What do you want to do?">
+      <input type="text" class="form-control" ng-model="newTask.desc" placeholder="What do you want to do?">
     </div>
     <div class="form-group">
       <input type="text" class="form-control" ng-model="newTask.priority" placeholder="1(high), 2(med), 3(low)">
@@ -13,9 +13,9 @@
   </form>
 
   <ul>
-    <li ng-repeat="(id, task) in tasks | orderBy:'priority'"> {{ task.title }} {{ task.priority }} {{ task.completed }}
+    <li ng-repeat="(id, task) in tasks | orderBy:'priority'"> {{ task.desc }} {{ task.priority }} {{ task.status }}
 
-      <input class="toggle" type="checkbox" ng-model="todo.completed" ng-change="tasks.$save(task)">
+      <a href="" ng-model="task.status" ng-click="changeState()"> [complete] </a>
 
     </li>
   </ul>
