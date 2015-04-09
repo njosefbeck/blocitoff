@@ -13,7 +13,7 @@
   </form>
 
   <ul>
-    <li ng-repeat="(id, task) in tasks | orderBy:'priority'"> {{ task.desc }} {{ task.priority }} {{ task.status }}
+    <li ng-repeat="(id, task) in tasks | orderBy:'priority' track by $index"> {{ task.desc }} {{ task.priority }} {{ task.status }}
 
       <a href="" ng-model="task.status" ng-click="changeState()"> [complete] </a>
 

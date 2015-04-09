@@ -19,10 +19,10 @@ app.controller('MainCtrl', ['$scope', 'toDoTasks', function($scope, toDoTasks) {
     $scope.newTask = { desc: '', priority: '', status: 'active' };
   };
 
-  $scope.changeState = function(id) {
-    $scope.task = $scope.tasks[3];
+  $scope.changeState = function($index) {
+    $scope.task = $scope.tasks[$index];
     $scope.task.status = 'complete';
-    toDoTasks.changeState(id);
+    toDoTasks.changeState($index);
   };
 
   //$scope.updateTask = function(id) {

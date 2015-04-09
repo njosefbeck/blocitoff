@@ -23,9 +23,9 @@ app.factory('toDoTasks', ['$firebaseArray', 'FIREBASE_URI', function ($firebaseA
       tasks.$add(task);
     };
 
-    var changeState = function(id) {
+    var changeState = function($index) {
       console.log('I was clicked!');
-      tasks.$save(3).then(function() {
+      tasks.$save($index).then(function() {
         console.log(tasks);
       });
     };
