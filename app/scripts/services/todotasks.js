@@ -23,11 +23,12 @@ app.factory('toDoTasks', ['$firebaseArray', 'FIREBASE_URI', function ($firebaseA
       tasks.$add(task);
     };
 
-    var changeState = function() {
-      var task = tasks.$getRecord(someRecordKey);
+    var changeState = function(id) {
+      console.log("I was clicked!");
+      var task = tasks.$getRecord(id);
       task.status = "complete";
       tasks.$save(task).then(function() {
-        // new task status has been saved to Firebase
+        console.log(tasks);
       });
     }
 
@@ -41,7 +42,8 @@ app.factory('toDoTasks', ['$firebaseArray', 'FIREBASE_URI', function ($firebaseA
 
     return {
       getTasks: getTasks,
-      addTask: addTask
+      addTask: addTask,
+      changeState: changeState
       //updateTask: updateTask,
       //removeTask: removeTask
     };
