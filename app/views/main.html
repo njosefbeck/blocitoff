@@ -15,7 +15,7 @@
   <ul>
     <li ng-repeat="(id, task) in tasks | orderBy:'priority'"> {{ task.desc }} {{ task.priority }} {{ task.status }}
 
-      <a href="" ng-click="changeState()"> [complete] </a>
+      <a href="" ng-model="tasks.status" ng-click="changeState()"> [complete] </a>
 
     </li>
   </ul>
