@@ -14,7 +14,6 @@ body {
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
-.marketing,
 .footer {
   padding-left: 15px;
   padding-right: 15px;
@@ -45,25 +44,6 @@ body {
   margin: 30px 0;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 20px 0;
-
-  p + h4 {
-    margin-top: 28px;
-  }
-}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
@@ -73,7 +53,6 @@ body {
 
   /* Remove the padding we set earlier */
   .header,
-  .marketing,
   .footer {
     padding-left: 0;
     padding-right: 0;
@@ -82,9 +61,56 @@ body {
   .header {
     margin-bottom: 30px;
   }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
+
+}
+
+.taskInput {
+  width: 400px;
+}
+
+.tasksRow {
+  margin: 20px 0;
+
+}
+
+.todo {
+  margin: 0;
+  padding: 0;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      padding-top: 0px;
+      font-size: 18px;
+    }
+  }
+}
+
+.complete {
+  background-color: #D2FADE;
+
+  ul {
+    display: table;
+    margin: 0 auto;
+  }
+}
+
+.desc {
+  background-color: #DEF5FA;
+
+  ul {
+    margin-left: 10px;
+  }
+}
+
+.status {
+  background-color: #DEF5FA;
+
+  ul {
+    margin-left: 10px;
   }
 }
 

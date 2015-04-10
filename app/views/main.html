@@ -8,7 +8,7 @@
   <div class="col-md-12">
     <form ng-submit="addTask()" class="form-inline">
       <div class="form-group">
-        <input type="text" class="form-control" ng-model="newTask.desc" placeholder="What do you want to do?">
+        <input type="text" class="form-control taskInput" ng-model="newTask.desc" placeholder="What do you want to do?">
       </div>
       <div class="form-group">
         <input type="text" class="form-control" ng-model="newTask.priority" placeholder="1(high), 2(med), 3(low)">
@@ -18,9 +18,17 @@
   </div>
 </div>
 
-<div class="row">
-  
-  <div class="col-md-4">
+<div class="row tasksRow">
+
+  <div class="col-md-2 todo complete">
+    <ul>
+      <li ng-repeat="(id, task) in tasks | orderBy:'priority'" class="">
+        <a href="" ng-model="task.status" ng-click="changeState()"> [complete] </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-md-7 todo desc">
     <ul>
       <li ng-repeat="(id, task) in tasks | orderBy:'priority'" class="">
         {{ task.desc }} 
@@ -28,6 +36,7 @@
     </ul>
   </div>
 
+  <!--
   </div class="col-md-2">
     <ul>
       <li ng-repeat="(id, task) in tasks | orderBy:'priority'" class="">
@@ -35,19 +44,12 @@
       </li>
     </ul>
   </div>
+  -->
 
-  <div class="col-md-2">
+  <div class="col-md-2 todo status">
     <ul>
       <li ng-repeat="(id, task) in tasks | orderBy:'priority'" class="">
         {{ task.status }} 
-      </li>
-    </ul>
-  </div>
-
-  <div class="col-md-2">
-      <ul>
-      <li ng-repeat="(id, task) in tasks | orderBy:'priority'" class="">
-        <a href="" ng-model="task.status" ng-click="changeState()"> [complete] </a>
       </li>
     </ul>
   </div>
