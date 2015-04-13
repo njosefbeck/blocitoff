@@ -15,20 +15,15 @@ app.factory('toDoTasks', ['$firebaseArray', 'FIREBASE_URI', function ($firebaseA
       return tasks;
     };
 
-    var orderByPriority = function() {
-      // Write more complex sort function here
-    };
-
     var addTask = function(task) {
       tasks.$add(task);
     };
 
-    var changeState = function(id) {
-      console.log('I was clicked!');
-      tasks.$save(3).then(function() {
-        console.log(tasks);
-      });
-    };
+    //var changeState = function(id) {
+    //  tasks.$save(3).then(function() {
+    //    console.log(tasks);
+    //  });
+    //};
 
     //var updateTask = function(id) {
     //  tasks.$save(id);

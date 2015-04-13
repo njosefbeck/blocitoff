@@ -46,7 +46,7 @@
 
   <div class="col-md-8 todo desc">
     <ul>
-      <li ng-repeat="(id, task) in tasks | orderBy:'priority'" class="">
+      <li ng-repeat="(id, task) in tasks | orderBy:'priority'" ng-click="completeTask($index)">
         {{ task.desc }} 
       </li>
     </ul>

@@ -9,20 +9,20 @@
  */
 app.controller('MainCtrl', ['$scope', 'toDoTasks', function($scope, toDoTasks) {
 
-  $scope.newTask = { desc: '', priority: '', status: 'active' };
+  $scope.newTask = { desc: '', priority: '', completed: false };
   $scope.currentTask = null;
 
   $scope.tasks = toDoTasks.getTasks();
 
   $scope.addTask = function() {
     toDoTasks.addTask(angular.copy($scope.newTask));
-    $scope.newTask = { desc: '', priority: '', status: 'active' };
+    $scope.newTask = { desc: '', priority: '', completed: false };
   };
 
-  $scope.changeState = function(id) {
-    $scope.task = $scope.tasks[3];
-    $scope.task.status = 'complete';
-    toDoTasks.changeState(id);
+  $scope.completeTask = function(index) {
+    $scope.tasks[index].completed = true;
+    $scope.tasks.$save(index);
+    console.log(tasks);
   };
 
   //$scope.updateTask = function(id) {
