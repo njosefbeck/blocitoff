@@ -100,17 +100,13 @@ h4 {
     li {
       padding-top: 0px;
       font-size: 18px;
+      cursor: pointer;
     }
   }
 }
 
-.complete {
-  background-color: #D2FADE;
-
-  ul {
-    display: table;
-    margin: 0 auto;
-  }
+.task-complete {
+  text-decoration: line-through;
 }
 
 .desc {

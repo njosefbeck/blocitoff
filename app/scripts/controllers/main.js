@@ -13,6 +13,8 @@ app.controller('MainCtrl', ['$scope', 'toDoTasks', function($scope, toDoTasks) {
 
   $scope.tasks = toDoTasks.getTasks();
 
+  $scope.taskComplete = false;
+
   $scope.addTask = function() {
     toDoTasks.addTask(angular.copy($scope.newTask));
     $scope.newTask = { desc: '', priority: '', completed: false };
