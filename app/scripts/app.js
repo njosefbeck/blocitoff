@@ -30,6 +30,10 @@ var app = angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
+      .when('/completedTasks', {
+        templateUrl: 'views/completedtasks.html',
+        controller: 'CompletedtasksCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
