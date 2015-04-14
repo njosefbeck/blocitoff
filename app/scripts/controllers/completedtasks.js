@@ -9,9 +9,5 @@
  */
 angular.module('blocitoffApp')
   .controller('CompletedtasksCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+      
   });

@@ -1,1 +1,39 @@
-<p>This is the completedTasks view.</p>
+<div class="row">
+  <div class="col-md-6">
+    <h1>Completed/Expired Tasks</h1>
+  </div>
+  <div class="col-md-4">
+    <p class="completed_link">Active Tasks</p>
+</div>
+
+<div class="row">
+
+  <div class="col-md-8">
+    <h3>Task</h3>
+  </div>
+
+  <div class="col-md-4">
+    <h4>Priority</h4>
+  </div>
+
+</div>
+
+<div class="row tasksRow">
+
+  <div class="col-md-8 todo desc">
+    <ul>
+      <li ng-repeat="(id, task) in tasks | orderBy:'priority'" ng-click="completeTask($index); taskComplete = !taskComplete" ng-class="{'task-complete' : taskComplete}">
+        {{ task.desc }} 
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-md-4 todo priority">
+    <ul>
+      <li ng-repeat="(id, task) in tasks | orderBy:'priority'" class="">
+        {{ task.priority }} 
+      </li>
+    </ul>
+  </div>
+
+</div>
