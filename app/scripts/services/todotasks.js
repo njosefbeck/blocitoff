@@ -19,24 +19,10 @@ app.factory('toDoTasks', ['$firebaseArray', 'FIREBASE_URI', function ($firebaseA
       tasks.$add(task);
     };
 
-    //var changeState = function(id) {
-    //  tasks.$save(3).then(function() {
-    //    console.log(tasks);
-    //  });
-    //};
-
-    //var updateTask = function(id) {
-    //  tasks.$save(id);
-    //};
-
-    //var removeTask = function(task) {
-    //  tasks.$remove(id);
-    //};
-
     return {
       getTasks: getTasks,
       addTask: addTask,
-      changeState: changeState
+      //changeState: changeState
       //updateTask: updateTask,
       //removeTask: removeTask
     };
