@@ -34,16 +34,6 @@
 
 <div class="row tasksRow">
 
-  <!-- Changing functionality to not require this button 
-  <div class="col-md-2 todo complete">
-    <ul>
-      <li ng-repeat="(id, task) in tasks | orderBy:'priority'" class="">
-        <a href="" ng-model="task.status" ng-click="changeState()"> [complete] </a>
-      </li>
-    </ul>
-  </div>
-  -->
-
   <div class="col-md-8 todo desc">
     <ul>
       <li ng-repeat="(id, task) in tasks | orderBy:'priority'" ng-click="completeTask($index); taskComplete = !taskComplete" ng-class="{'task-complete' : taskComplete}">
@@ -52,17 +42,7 @@
     </ul>
   </div>
 
-  <!--
-  </div class="col-md-2">
-    <ul>
-      <li ng-repeat="(id, task) in tasks | orderBy:'priority'" class="">
-        {{ task.priority }} 
-      </li>
-    </ul>
-  </div>
-  -->
-
-  <div class="col-md-4 todo status">
+  <div class="col-md-4 todo priority">
     <ul>
       <li ng-repeat="(id, task) in tasks | orderBy:'priority'" class="">
         {{ task.priority }} 
@@ -71,21 +51,3 @@
   </div>
 
 </div>
-
-<!--
-<div class="row">
-  <div class="col-md-10">
-    <ul>
-      <li ng-repeat="(id, task) in tasks | orderBy:'priority'" class=""> 
-        
-          {{ task.desc }} 
-          {{ task.priority }}
-          {{ task.status }}
-
-          <a href="" ng-model="task.status" ng-click="changeState()"> [complete] </a>
-      
-      </li>
-    </ul>
-  </div>
-</div>
--->
