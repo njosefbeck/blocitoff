@@ -18,24 +18,26 @@ var app = angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'firebase'
+    'firebase',
+    'ui.router'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
+  .config(function ($stateProvider, $urlRouterProvider, $routeProvider) {
+    
+    $urlRouterProvider.otherwise("/home");
+
+    $stateProvider
+      .state('home', {
+        url: "/home",
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/about', {
+      .state('about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
-      .when('/completedTasks', {
+      .state('completedTasks', {
         templateUrl: 'views/completedtasks.html',
         controller: 'CompletedtasksCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
       });
   });
 
