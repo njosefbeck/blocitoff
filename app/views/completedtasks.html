@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-6">
-    <h1>Completed/Expired Tasks</h1>
+    <h3>Completed/Expired Tasks</h3>
   </div>
   <div class="col-md-4">
     <p class="completed_link">Active Tasks</p>
@@ -22,7 +22,7 @@
 
   <div class="col-md-8 todo desc">
     <ul>
-      <li ng-repeat="(id, task) in tasks | orderBy:'priority'" ng-click="completeTask($index); taskComplete = !taskComplete" ng-class="{'task-complete' : taskComplete}">
+      <li ng-repeat="(id, task) in tasks | filter:filterTasks | orderBy:'priority'" ng-click="completeTask($index); taskComplete = !taskComplete" ng-class="{'task-complete' : taskComplete}">
         {{ task.desc }} 
       </li>
     </ul>

@@ -7,7 +7,16 @@
  * # CompletedtasksCtrl
  * Controller of the blocitoffApp
  */
-angular.module('blocitoffApp')
-  .controller('CompletedtasksCtrl', function ($scope) {
-      
-  });
+app.controller('CompletedtasksCtrl', ['$scope', 'toDoTasks', function($scope, toDoTasks) {
+
+  $scope.tasks = toDoTasks.getTasks();
+
+  $scope.filterTasks = function(task) {
+    if (task.completed == false) {
+      return false;
+    }
+    else {
+      return true;
+    }
+  }
+}]);
