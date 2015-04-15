@@ -11,7 +11,7 @@ app.controller('CompletedtasksCtrl', ['$scope', 'toDoTasks', function($scope, to
 
   $scope.tasks = toDoTasks.getTasks();
 
-  $scope.filterTasks = function(task) {
+  $scope.filterCompletedTasks = function(task) {
     if (task.completed == false) {
       return false;
     }

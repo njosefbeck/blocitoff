@@ -14,7 +14,7 @@
 
   <div class="col-md-8 todo desc">
     <ul>
-      <li ng-repeat="(id, task) in tasks | filter:filterTasks | orderBy:'priority'" ng-class="{'task-complete' : true}">
+      <li ng-repeat="(id, task) in tasks | filter:filterCompletedTasks | orderBy:'priority'" ng-class="{'task-complete' : true}">
         {{ task.desc }} 
       </li>
     </ul>
