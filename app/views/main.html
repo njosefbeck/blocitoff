@@ -40,7 +40,7 @@
 
   <div class="col-md-8 todo desc">
     <ul>
-      <li ng-repeat="(id, task) in tasks | filter:filterActiveTasks | orderBy:'priority'" ng-click="completeTask($index); taskComplete = !taskComplete" ng-class="{'task-complete' : taskComplete}">
+      <li ng-repeat="task in tasks | filter:filterActiveTasks | orderBy:'priority'" ng-click="completeTask($index); taskComplete = !taskComplete" ng-class="{'task-complete' : taskComplete}">
         {{ task.desc }} 
       </li>
     </ul>
