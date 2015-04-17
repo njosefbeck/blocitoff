@@ -22,7 +22,7 @@ app.controller('MainCtrl', ['$scope', 'toDoTasks', function($scope, toDoTasks) {
 
   $scope.completeTask = function(id) {
     $scope.tasks.$id.completed = true;
-    $scope.tasks.$save(id);
+    $scope.tasks.$save($id);
   };
 
  // $scope.completeTask = function(index) {
