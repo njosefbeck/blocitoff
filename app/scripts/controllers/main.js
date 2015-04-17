@@ -20,9 +20,9 @@ app.controller('MainCtrl', ['$scope', 'toDoTasks', function($scope, toDoTasks) {
     $scope.newTask = { desc: '', priority: '', completed: false };
   };
 
-  $scope.completeTask = function(id) {
-    $scope.tasks.$id.completed = true;
-    $scope.tasks.$save($id);
+  $scope.completeTask = function(index) {
+    $scope.tasks[index].completed = true;
+    $scope.tasks.$save(task[index]);
   };
 
  // $scope.completeTask = function(index) {
