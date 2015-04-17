@@ -25,11 +25,6 @@ app.controller('MainCtrl', ['$scope', 'toDoTasks', function($scope, toDoTasks) {
     $scope.tasks.$save(index);
   };
 
- // $scope.completeTask = function(index) {
- //   $scope.tasks[index].completed = true;
- //   $scope.tasks.$save(index);
- // };
-
   $scope.filterActiveTasks = function(task) {
     if (task.completed == true) {
       return false;
