@@ -46,7 +46,7 @@
     <input ng-model="task.completed" type="checkbox" ng-change="tasks.$save(task)"/>
   </div>
 
-  <div class="col-md-8 todo desc" ng-click="completeTask($index); taskComplete = !taskComplete" ng-class="{'task-complete' : taskComplete}">
+  <div class="col-md-8 todo desc" ng-click="taskComplete = !taskComplete" ng-class="{'task-complete' : taskComplete}">
     {{ task.desc }}
   </div>
 
@@ -54,23 +54,4 @@
     {{ task.priority }}
   </div>
 
-<!--
-  <div class="col-md-8 todo desc">
-    <ul>
-
-       <li ng-repeat="(id, task) in tasks | filter:filterActiveTasks | orderBy:'priority'" ng-click="completeTask($index); taskComplete = !taskComplete" ng-class="{'task-complete' : taskComplete}">
-      
-        {{ task.desc }} 
-      </li>
-    </ul>
-  </div>
-
-  <div class="col-md-4 todo priority">
-    <ul>
-      <li ng-repeat="(id, task) in tasks | filter:filterActiveTasks | orderBy:'priority'" class="">
-        {{ task.priority }} 
-      </li>
-    </ul>
-  </div>
--->
 </div>
