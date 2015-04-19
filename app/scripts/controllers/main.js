@@ -21,11 +21,11 @@ app.controller('MainCtrl', ['$scope', 'toDoTasks', function($scope, toDoTasks) {
   };
 
   $scope.filterActiveTasks = function(task) {
-    if (task.completed == true) {
+    if (task.completed === true) {
       return false;
     }
     else {
       return true;
     }
-  }
+  };
 }]);

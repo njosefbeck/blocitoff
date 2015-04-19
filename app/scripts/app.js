@@ -23,11 +23,11 @@ var app = angular
   ])
   .config(function ($stateProvider, $urlRouterProvider, $routeProvider) {
     
-    $urlRouterProvider.otherwise("/home");
+    $urlRouterProvider.otherwise('/home');
 
     $stateProvider
       .state('home', {
-        url: "/home",
+        url: '/home',
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })

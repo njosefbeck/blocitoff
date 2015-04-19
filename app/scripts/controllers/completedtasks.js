@@ -12,11 +12,11 @@ app.controller('CompletedtasksCtrl', ['$scope', 'toDoTasks', function($scope, to
   $scope.tasks = toDoTasks.getTasks();
 
   $scope.filterCompletedTasks = function(task) {
-    if (task.completed == false) {
+    if (task.completed === false) {
       return false;
     }
     else {
       return true;
     }
-  }
+  };
 }]);
