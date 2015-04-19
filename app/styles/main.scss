@@ -84,25 +84,15 @@ h4 {
 }
 
 .tasksRow {
-  margin: 0 0 20px 0;
+  margin: 0 0 0 0;
 
 }
 
 .todo {
   margin: 0;
   padding: 0;
-
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-
-    li {
-      padding-top: 0px;
-      font-size: 18px;
-      cursor: pointer;
-    }
-  }
+  font-size: 18px;
+  cursor: pointer;
 }
 
 .task-complete {
@@ -111,10 +101,6 @@ h4 {
 
 .desc {
   background-color: #DEF5FA;
-
-  ul {
-    margin-left: 10px;
-  }
 }
 
 .completed_link {
@@ -122,12 +108,3 @@ h4 {
   margin-right: -50px;
   padding: 0;
 }
-
-.priority {
-  //background-color: #DEF5FA;
-
-  ul {
-    margin-left: 10px;
-  }
-}
-
