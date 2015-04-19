@@ -79,6 +79,16 @@ h4 {
   padding: 0;
 }
 
+// FORM VALIDATION STYLES
+
+.ng-invalid.ng-dirty {
+  border-color: #FA787E;
+}
+
+.ng-valid.ng-dirty {
+  border-color: #78FA89;
+}
+
 .taskInput {
   width: 400px;
 }
