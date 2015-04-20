@@ -22,7 +22,7 @@ app.controller('MainCtrl', ['$scope', 'toDoTasks', '$timeout', function($scope, 
 
   $scope.hideExpired = function() {
     console.log("$scope.hideExpired - Timeout occurred");
-  }
+  };
 
   $timeout( function(){
     $scope.hideExpired();

@@ -40,13 +40,13 @@
 
 </div>
 
-<div class="row tasksRow" ng-repeat="(id, task) in tasks | filter:filterActiveTasks | orderBy:'priority'">
+<div class="row tasksRow" ng-repeat="(id, task) in tasks | filter:filterActiveTasks | orderBy:'priority'" ng-hide="hideExpired()">
 
   <div class="col-md-1">
     <input ng-model="task.completed" type="checkbox" ng-change="tasks.$save(task)"/>
   </div>
 
-  <div class="col-md-8 todo desc" ng-class="{'task-complete' : task.completed}" ng-hide="hideExpired()">
+  <div class="col-md-8 todo desc" ng-class="{'task-complete' : task.completed}">
     {{ task.desc }}
   </div>
 
