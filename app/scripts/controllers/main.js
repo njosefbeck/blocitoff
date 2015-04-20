@@ -20,11 +20,13 @@ app.controller('MainCtrl', ['$scope', 'toDoTasks', '$timeout', function($scope, 
     $scope.newTask = { desc: '', priority: '', completed: false };
   };
 
-  $scope.hideExpired = function(task) {
-    $timeout(function(task) {
-      $scope.task.completed = true;
-    }, 5000);
-  };
+  $scope.hideExpired = function() {
+    console.log("$scope.hideExpired - Timeout occurred");
+  }
+
+  $timeout( function(){
+    $scope.hideExpired();
+  }, 5000);
 
   $scope.filterActiveTasks = function(task) {
     if (task.completed === true) {
