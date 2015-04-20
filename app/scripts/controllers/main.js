@@ -7,7 +7,7 @@
  * # MainCtrl
  * Controller of the blocitoffApp
  */
-app.controller('MainCtrl', ['$scope', 'toDoTasks', function($scope, toDoTasks) {
+app.controller('MainCtrl', ['$scope', 'toDoTasks', '$timeout', function($scope, toDoTasks, $timeout) {
 
   $scope.newTask = { desc: '', priority: '', completed: false };
 
