@@ -20,6 +20,12 @@ app.controller('MainCtrl', ['$scope', 'toDoTasks', function($scope, toDoTasks) {
     $scope.newTask = { desc: '', priority: '', completed: false };
   };
 
+  $scope.hideExpired = function(task) {
+    $timeout(function(task) {
+      $scope.task.completed = true;
+    }, 5000);
+  };
+
   $scope.filterActiveTasks = function(task) {
     if (task.completed === true) {
       return false;
