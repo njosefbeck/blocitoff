@@ -33,7 +33,7 @@ app.controller('MainCtrl', ['$scope', 'toDoTasks', '$timeout', function($scope, 
 
       if (timediff > 10000){
         $scope.tasks[i].completed = true;
-        $scope.tasks.$save();
+        $scope.tasks.$save(i);
       }
     }
   };
