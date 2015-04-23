@@ -1,17 +1,17 @@
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-xs-8 col-md-6">
     <h1>Current Tasks</h1>
   </div>
-  <div class="col-md-4">
+  <div class="col-xs-4 col-md-4">
     <p class="completed_link">
       <a ui-sref="completedTasks">
-      Completed/Expired Tasks
+      Completed Tasks
       </a>
     </p>
 </div>
 
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-xs-12 col-md-12">
     <form name="AddTask" ng-submit="AddTask.$valid && addTask()" class="form-inline" novalidate>
       <div class="form-group">
         <input type="text" class="form-control taskInput" ng-model="newTask.desc" placeholder="What do you want to do?" required>
@@ -26,31 +26,31 @@
 
 <div class="row">
 
-  <div class="col-md-1">
+  <div class="col-xs-2 col-md-1">
     <h4>Done?</h4>
   </div>
 
-  <div class="col-md-8">
+  <div class="col-xs-8 col-md-8">
     <h3>Task</h3>
   </div>
 
-  <div class="col-md-3">
-    <h4>Priority</h4>
+  <div class="col-xs-2 col-md-3">
+    <h4 class="priority">Priority</h4>
   </div>
 
 </div>
 
 <div class="row tasksRow" ng-repeat="(id, task) in tasks | filter:filterActiveTasks | orderBy:'priority'">
 
-  <div class="col-md-1">
+  <div class="col-xs-2 col-md-1">
     <input ng-model="task.completed" type="checkbox" ng-change="tasks.$save(task)"/>
   </div>
 
-  <div class="col-md-8 todo desc" ng-class="{'task-complete' : task.completed}">
+  <div class="col-xs-8 col-md-8 todo desc" ng-class="{'task-complete' : task.completed}">
     {{ task.desc }}
   </div>
 
-  <div class="col-md-3 todo priority">
+  <div class="col-xs-2 col-md-3 todo priority">
     {{ task.priority }}
   </div>
 

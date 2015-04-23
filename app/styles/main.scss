@@ -75,8 +75,12 @@ h3 {
 }
 
 h4 {
-  margin: 20px 0 5px -20px;
+  margin: 20px 0 5px 0;
   padding: 0;
+}
+
+.priority {
+  margin-left: -20px;
 }
 
 // FORM VALIDATION STYLES
@@ -94,7 +98,7 @@ h4 {
 }
 
 .tasksRow {
-  margin: 0 0 0 0;
+  margin-bottom: 20px;
 
 }
 
@@ -116,4 +120,5 @@ h4 {
   margin-top: 48px;
   margin-right: -50px;
   padding: 0;
+  cursor: pointer;
 }
