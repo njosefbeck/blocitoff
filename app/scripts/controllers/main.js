@@ -9,7 +9,7 @@
  */
 app.controller('MainCtrl', ['$scope', 'toDoTasks', '$timeout', function($scope, toDoTasks, $timeout) {
 
-  $scope.newTask = { desc: '', priority: '', completed: false };
+  $scope.newTask = { desc: '', priority: '', completed: false, created_on: Date() };
 
   $scope.tasks = toDoTasks.getTasks();
 
@@ -17,7 +17,7 @@ app.controller('MainCtrl', ['$scope', 'toDoTasks', '$timeout', function($scope, 
 
   $scope.addTask = function() {
     toDoTasks.addTask(angular.copy($scope.newTask));
-    $scope.newTask = { desc: '', priority: '', completed: false };
+    $scope.newTask = { desc: '', priority: '', completed: false, created_on: Date() };
   };
 
   $scope.hideExpired = function() {
