@@ -20,7 +20,6 @@ app.controller('MainCtrl', ['$scope', 'toDoTasks', '$timeout', function($scope, 
     $scope.newTask = { desc: '', priority: '', completed: false, created_on: Date() };
   };
 
-/* DISABLED FOR TESTING PURPOSES
   $scope.cleanupTasks = function() {
     var timediff = 0;
     var d1 = new Date();
@@ -43,7 +42,7 @@ app.controller('MainCtrl', ['$scope', 'toDoTasks', '$timeout', function($scope, 
     console.log('ping');
     $scope.cleanupTasks();
   }, 5000);
-*/
+
 
   $scope.filterActiveTasks = function(task) {
     if (task.completed === true) {
